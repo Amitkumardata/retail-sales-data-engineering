@@ -4,7 +4,7 @@
 
 This project Implements a cloud-based retail sales data platform on azure.
 It ingest operational retail sales data , store raw data in azure data lake storage Gen 2, applies data quality and transformation rules through azure data bricks and pyspark, and publishes curated dataset for analytics and business reporting 
-
+c
 The platform follows a layered data architecture:
 Source system-> landing->bronze->silver->Gold->reporting and Analytics
 
