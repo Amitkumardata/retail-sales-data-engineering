@@ -1,38 +1,27 @@
-# Hybrid Retail Data Modernization and Cloud Migration Platform
+# An end to end azure data engineer project built with azure data factory, azure data lake storage Gen 2 , azure Databricks and pyspark
 
 ## Project Overview
 
-This project focuses on modernizing a retail analytics platform by integrating on-premise ERP, POS, and supply chain systems with Azure cloud services. The goal is to centralize operational and sales data, improve ingestion reliability, standardize transformations, and enable faster, more trusted analytics.
+This project Implements a cloud-based retail sales data platform on azure.
+It ingest operational retail sales data , store raw data in azure data lake storage Gen 2, applies data quality and transformation rules through azure data bricks and pyspark, and publishes curated dataset for analytics and business reporting 
+
+The platform follows a layered data architecture:
+Source system-> landing->bronze->silver->Gold->reporting and Analytics
 
 ## Business Problem
 
-The retail organization was receiving weekly supply-chain and sales data across multiple sources, but the ingestion pipelines were unstable and reporting teams were analyzing inconsistent and incomplete data. Daily operations required a reliable ingestion process, standardized data quality checks, and a scalable cloud-based modern data platform.
+Retail sales data arrive from operational source system and may contain incomplete record , inconsistent category values, invalid sales amounts and duplicates transaction. using this data directly for reporting can produce unreliable sales metrics and inconsistent business decisions.
 
-## Solution Architecture
+The platform addresses this by automating ingestion, retaining raw source data for traceability ,validating and standardizing records and creating curated analytics datasets
 
-The solution uses a hybrid data modernization approach across multiple layers:
 
-- Azure Data Factory for ingestion
-- ADLS Gen2 for storage
-- PySpark for transformation
-- Medallion architecture to structure data into Bronze, Silver, and Gold
-- Azure-based analytics platform for reporting and decision-making
+## Business Objectives
+Create a reliable and scalable ingestions process for retail sales data
+-Retain raw data for auditing ,replay and issues investigation
+-Imporve data quality before data is sued by reporting team
+- provide trsuted silver and gold dataset for anal
 
-## Medallion Architecture
 
-Bronze -> Silver -> Gold
-
-- Bronze: raw and ingested data
-- Silver: cleaned, validated, and standardized data
-- Gold: business-ready analytical data for dashboards and reporting
-
-## Tech Stack
-
-- Azure Data Factory (ADF)
-- Azure Data Lake Storage Gen2
-- PySpark
-- Databricks or notebook-based processing
-- Power BI / analytics layer (planned)
 
 ## Repository Structure
 
@@ -52,33 +41,5 @@ Bronze -> Silver -> Gold
 └── .gitignore
 ```
 
-## Current Progress
 
-- ADF ingestion pipeline designed and documented
-- Source-to-landing data movement configured
-- Bronze-to-Silver transformation documented
-- Data quality and quarantine handling introduced
-- Validation and profiling checklist in progress
 
-## Key Challenges Solved
-
-- Mixed data types in raw data, especially numeric fields stored as strings
-- Inconsistent column naming and formatting
-- Null and invalid records in source data
-- Duplicate records and data quality issues
-- Need for quarantine records to isolate bad data
-
-## Recommended GitHub Repository Name
-
-The recommended repo name for this project is:
-
-`hybrid-retail-analytics-modernization`
-
-This is the name that best matches the portfolio project and the domain focus of retail analytics and modernization.
-
-## Next Steps
-
-- Continue Bronze-to-Silver documentation
-- Add data profiling output and file-level checks
-- Prepare Silver-to-Gold transformation notes
-- Add operational runbook and troubleshooting documentation
