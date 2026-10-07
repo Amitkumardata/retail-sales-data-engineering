@@ -33,3 +33,21 @@ account-level reporting group: pending administrator provisioning
 permission model: Least privilage
 planned reporting permision: 'USE CATALOG , USE SCHEMA AND SELECT
     
+# unity catalog Hierarchy
+METASTORE
+   └── CATALOG
+         └── SCHEMA
+               └── TABLE / VIEW / VOLUME
+
+# GRANT PATTERN
+grant use catalog
+on catalog dbw_retail_de_dev
+to 'retail-reporting-readers'
+
+GRANT USE SCHEMA
+ON SCHEMA dbw_retail_de_dev.gold
+TO `retail-reporting-readers`
+
+GRANT USE SCHEMA
+ON SCHEMA dbw_retail_de_dev.gold
+TO `retail-reporting-readers`
