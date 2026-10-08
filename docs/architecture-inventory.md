@@ -51,3 +51,35 @@ TO `retail-reporting-readers`
 GRANT USE SCHEMA
 ON SCHEMA dbw_retail_de_dev.gold
 TO `retail-reporting-readers`
+
+## Pipeline failure recovery runbook
+
+Job: retail_supply_chain_daily_pipeline
+
+workflow:
+bronze_to_silver -> silver_to_gold-> data validation
+
+### check the failed task
+
+open:
+jobs & pipeline ->retail_supply_chain_daily_pipeline->Runs
+
+Idenityfy:
+Failed task name
+Error message
+Run start time
+retry result
+
+# 2 READ THE ERROR
+
+common error:
+source file/path exists
+Required columns are present
+cluster started correctly 
+unity catalog permission are aviable
+storage access is available
+
+# Fix the cause
+exmaple
+missing input file: correct the path or wait for deliveyr
+data schema change: update the transformation mapping
