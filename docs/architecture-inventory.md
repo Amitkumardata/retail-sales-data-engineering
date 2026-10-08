@@ -88,3 +88,19 @@ Temporary compute failure: rerun the failed task
 ## Recover safely
 
 use **repair run*** or rerun only the failed task after fixing the problem
+Do not rerun the sholw pipeline unless earlier task must process data again
+
+Confirm:
+- bronze_to_silver` succeeded.
+- silver_to_gold` succeeded.
+- data_validation` succeeded.
+- Gold table and reports show expected results.
+
+### record the incident
+Record:
+- Date and time
+- Failed task
+- Root cause
+- Fix applied
+- Recovery result
+  
