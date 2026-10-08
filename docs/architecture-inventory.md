@@ -80,6 +80,11 @@ unity catalog permission are aviable
 storage access is available
 
 # Fix the cause
-exmaple
 missing input file: correct the path or wait for deliveyr
 data schema change: update the transformation mapping
+Notebook schema: update the transformation mapping
+Temporary compute failure: rerun the failed task
+
+## Recover safely
+
+use **repair run*** or rerun only the failed task after fixing the problem
